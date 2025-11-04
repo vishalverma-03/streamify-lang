@@ -21,9 +21,19 @@ const Navbar = () => {
     <nav className="bg-base-200 border-b border-base-300 sticky top-0 z-30 h-16 flex items-center">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-end w-full">
-          {/* LOGO - ONLY IN THE CHAT PAGE */}
+          {/* App name for small screens (sidebar is hidden on small screens) */}
+          <div className="pr-4 lg:hidden">
+            <Link to="/" className="flex items-center gap-2.5">
+              <ShipWheelIcon className="size-7 text-primary" />
+              <span className="text-lg font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
+                Streamify
+              </span>
+            </Link>
+          </div>
+
+          {/* LOGO - ONLY IN THE CHAT PAGE (kept for large screens where sidebar may not show) */}
           {isChatPage && (
-            <div className="pl-5">
+            <div className="pl-5 hidden lg:flex">
               <Link to="/" className="flex items-center gap-2.5">
                 <ShipWheelIcon className="size-9 text-primary" />
                 <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary  tracking-wider">
